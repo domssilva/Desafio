@@ -39,10 +39,22 @@ const toWritten = (value: string): string => {
 
     const value = Number(number);
     let converted = '';
-    let ones, tens, hundreds, thousands;
+    let ones, tens, hundreds, thousands, tensThousand;
 
     switch (true) {
       // Thousands
+      case (value > 9999):
+        // console.log('##| switch ~ milhares |##');
+
+        tensThousand = Number(number[0]);
+        thousands = getThousands(Number(number[1]));
+        hundreds = Number(number[2]);
+        tens = Number(number[3]);
+        ones = Number(number[4]);
+
+        converted = `${matrix[1][tensThousand]} e ${thousands} e ${matrix[2][hundreds]} e ${matrix[1][tens]} e ${matrix[0][ones]}`;
+        break;
+
       case (value > 999):
         // console.log('##| switch ~ milhares |##');
 

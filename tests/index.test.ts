@@ -40,6 +40,11 @@ describe('Testing unity values (from 0 to 90s)', () => {
     const result = toWritten('R$ 81,00');
     expect(result).toBe('Oitenta e um reais');
   });
+
+  test('R$ 90,00 should equal to Noventa reais', () => {
+    const result = toWritten('R$ 90,00');
+    expect(result).toBe('Noventa reais');
+  });
 });
 
 describe('Testing hundreds values (from 100s to 1000s)', () => {
@@ -57,6 +62,11 @@ describe('Testing hundreds values (from 100s to 1000s)', () => {
     const result = toWritten('R$ 9.000,01');
     expect(result).toBe('Nove mil reais e um centavo');
   });
+
+  test('R$ 10.000,00 should equal to Dez mil reais', () => {
+    const result = toWritten('R$ 10.000,00');
+    expect(result).toBe('Dez mil reais');
+  });
 });
 
 describe('Testing hundreds values without the "." notation', () => {
@@ -68,5 +78,10 @@ describe('Testing hundreds values without the "." notation', () => {
   test('R$ 3200,50 should equal to Três mil e duzentos reais e cinquenta centavos', () => {
     const result = toWritten('R$ 3200,50');
     expect(result).toBe('Três mil e duzentos reais e cinquenta centavos');
+  });
+
+  test('R$ 97.500,00 should equal to Noventa e sete mil e quinhentos reais', () => {
+    const result = toWritten('R$ 97.500,00');
+    expect(result).toBe('Noventa e sete mil e quinhentos reais');
   });
 });
